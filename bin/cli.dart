@@ -6,10 +6,10 @@ import 'package:cli/models/asymmetric_cat.dart';
 import 'package:realm_dart/realm.dart';
 import 'package:cli/utils.dart';
 
-final appId = 'test-nhyzfll';
+final appId = 'dart-cli-testing-1-fvaqvih';
 
 // TODO update this for prod
-final baseURL = Uri(scheme: "http", host: 'localhost', port: 8080);
+final baseURL = Uri(scheme: "https", host: 'services.cloud-dev.mongodb.com');
 
 final numObjectsToCreate = 2;
 final listenToChanges = true;
