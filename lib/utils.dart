@@ -68,7 +68,7 @@ String getDogString(Dog dog) {
 }
 
 String getLocationsString(RealmMap<Location?> locations) {
-  return "";
+  return locations.toString();
   // var ret = "";
   // for (var location in locations) {
   //   final locStr = getLocationString(location);
@@ -81,8 +81,8 @@ String getLocationString(Location location) {
   return '{type: ${location.type}, lat: ${location.lat}, lon: ${location.lon}}';
 }
 
-String getToysString(RealmList<Toy?> locations) {
-  return "";
+String getToysString(RealmList<Toy?> toys) {
+  return toys.toString();
   // var ret = "";
   // for (var location in locations) {
   //   final locStr = getLocationString(location);
@@ -141,9 +141,8 @@ Cat genCat() {
     return Cat(
       objID,
       'Cat_$objID',
-        random.nextInt(10),
-      // age: random.nextInt(100),
-      // numWhiskers:
+      random.nextInt(10),
+      age: random.nextInt(100),
     );
 }
 
