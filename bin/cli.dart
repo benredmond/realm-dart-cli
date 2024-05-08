@@ -6,15 +6,15 @@ import 'package:cli/models/asymmetric_cat.dart';
 import 'package:realm_dart/realm.dart';
 import 'package:cli/utils.dart';
 
-final appId = 'dart-cli-testing-1-fvaqvih';
+final appId = '<APP-ID>';
 
-// TODO update this for prod
-final baseURL = Uri(scheme: "https", host: 'services.cloud-dev.mongodb.com');
+// final baseURL = new Uri.http("localhost:8080");
+final baseURL = Uri(scheme: "https", host: 'services.cloud-stage.mongodb.com');
 
 final numObjectsToCreate = 2;
 final listenToChanges = true;
 
-final schemaVersion = 1;
+final schemaVersion = 0;
 
 final catQuery = "numWhiskers < 10"; // This is the query for the Cats table
 final dogQuery = "age < 50"; // This is the query for the Dogs table

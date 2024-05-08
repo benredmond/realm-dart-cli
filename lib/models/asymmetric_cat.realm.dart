@@ -49,6 +49,11 @@ class AsymmetricCat extends _AsymmetricCat
       RealmObjectBase.getChanges<AsymmetricCat>(this);
 
   @override
+  Stream<RealmObjectChanges<AsymmetricCat>> changesFor(
+          [List<String>? keyPaths]) =>
+      RealmObjectBase.getChangesFor<AsymmetricCat>(this, keyPaths);
+
+  @override
   AsymmetricCat freeze() => RealmObjectBase.freezeObject<AsymmetricCat>(this);
 
   EJsonValue toEJson() {

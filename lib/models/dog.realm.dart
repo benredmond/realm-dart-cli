@@ -80,6 +80,10 @@ class Dog extends _Dog with RealmEntity, RealmObjectBase, RealmObject {
       RealmObjectBase.getChanges<Dog>(this);
 
   @override
+  Stream<RealmObjectChanges<Dog>> changesFor([List<String>? keyPaths]) =>
+      RealmObjectBase.getChangesFor<Dog>(this, keyPaths);
+
+  @override
   Dog freeze() => RealmObjectBase.freezeObject<Dog>(this);
 
   EJsonValue toEJson() {
@@ -183,6 +187,10 @@ class Location extends _Location
       RealmObjectBase.getChanges<Location>(this);
 
   @override
+  Stream<RealmObjectChanges<Location>> changesFor([List<String>? keyPaths]) =>
+      RealmObjectBase.getChangesFor<Location>(this, keyPaths);
+
+  @override
   Location freeze() => RealmObjectBase.freezeObject<Location>(this);
 
   EJsonValue toEJson() {
@@ -248,6 +256,10 @@ class Toy extends _Toy with RealmEntity, RealmObjectBase, EmbeddedObject {
       RealmObjectBase.getChanges<Toy>(this);
 
   @override
+  Stream<RealmObjectChanges<Toy>> changesFor([List<String>? keyPaths]) =>
+      RealmObjectBase.getChangesFor<Toy>(this, keyPaths);
+
+  @override
   Toy freeze() => RealmObjectBase.freezeObject<Toy>(this);
 
   EJsonValue toEJson() {
@@ -303,6 +315,10 @@ class Brand extends _Brand with RealmEntity, RealmObjectBase, EmbeddedObject {
   @override
   Stream<RealmObjectChanges<Brand>> get changes =>
       RealmObjectBase.getChanges<Brand>(this);
+
+  @override
+  Stream<RealmObjectChanges<Brand>> changesFor([List<String>? keyPaths]) =>
+      RealmObjectBase.getChangesFor<Brand>(this, keyPaths);
 
   @override
   Brand freeze() => RealmObjectBase.freezeObject<Brand>(this);

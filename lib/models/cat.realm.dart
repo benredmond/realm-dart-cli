@@ -47,6 +47,10 @@ class Cat extends _Cat with RealmEntity, RealmObjectBase, RealmObject {
       RealmObjectBase.getChanges<Cat>(this);
 
   @override
+  Stream<RealmObjectChanges<Cat>> changesFor([List<String>? keyPaths]) =>
+      RealmObjectBase.getChangesFor<Cat>(this, keyPaths);
+
+  @override
   Cat freeze() => RealmObjectBase.freezeObject<Cat>(this);
 
   EJsonValue toEJson() {

@@ -76,6 +76,11 @@ class AllPrimitiveOptional extends _AllPrimitiveOptional
       RealmObjectBase.getChanges<AllPrimitiveOptional>(this);
 
   @override
+  Stream<RealmObjectChanges<AllPrimitiveOptional>> changesFor(
+          [List<String>? keyPaths]) =>
+      RealmObjectBase.getChangesFor<AllPrimitiveOptional>(this, keyPaths);
+
+  @override
   AllPrimitiveOptional freeze() =>
       RealmObjectBase.freezeObject<AllPrimitiveOptional>(this);
 
@@ -210,6 +215,11 @@ class AllPrimitiveRequired extends _AllPrimitiveRequired
   @override
   Stream<RealmObjectChanges<AllPrimitiveRequired>> get changes =>
       RealmObjectBase.getChanges<AllPrimitiveRequired>(this);
+
+  @override
+  Stream<RealmObjectChanges<AllPrimitiveRequired>> changesFor(
+          [List<String>? keyPaths]) =>
+      RealmObjectBase.getChangesFor<AllPrimitiveRequired>(this, keyPaths);
 
   @override
   AllPrimitiveRequired freeze() =>
@@ -353,6 +363,11 @@ class AllPrimitiveLists extends _AllPrimitiveLists
   @override
   Stream<RealmObjectChanges<AllPrimitiveLists>> get changes =>
       RealmObjectBase.getChanges<AllPrimitiveLists>(this);
+
+  @override
+  Stream<RealmObjectChanges<AllPrimitiveLists>> changesFor(
+          [List<String>? keyPaths]) =>
+      RealmObjectBase.getChangesFor<AllPrimitiveLists>(this, keyPaths);
 
   @override
   AllPrimitiveLists freeze() =>
