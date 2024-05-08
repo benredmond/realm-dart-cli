@@ -63,35 +63,39 @@ void handleChanges<T extends RealmObject>(RealmResultsChanges<T> changes, String
 
 String getDogString(Dog dog) {
   return '{name: ${dog.name}, age: ${dog.age}, breed: ${dog.age}, '
-      'color: ${dog.color}, country: ${dog.country}, toy: ${getToysString(dog.toys)}, '
-      'location: ${getLocationsString(dog.locations)}}';
+      'color: ${dog.color}, country: ${dog.country}, toys: { ${getToysString(dog.toys)} }, '
+      'locations: { ${getLocationsString(dog.locations)} }}';
 }
 
 String getLocationsString(RealmMap<Location?> locations) {
-  return locations.toString();
-  // var ret = "";
-  // for (var location in locations) {
-  //   final locStr = getLocationString(location);
-  //   ret += '\t$locStr';
-  // }
-  // return ret;
+  var ret = "";
+  for (var location in locations.entries) {
+    final locStr = getLocationString(location.value);
+    ret += ' $locStr ';
+  }
+  return ret;
 }
 
-String getLocationString(Location location) {
+String getLocationString(Location? location) {
+  if (location == null) {
+    return "";
+  }
   return '{type: ${location.type}, lat: ${location.lat}, lon: ${location.lon}}';
 }
 
 String getToysString(RealmList<Toy?> toys) {
-  return toys.toString();
-  // var ret = "";
-  // for (var location in locations) {
-  //   final locStr = getLocationString(location);
-  //   ret += '\t$locStr';
-  // }
-  // return ret;
+  var ret = "";
+  for (var toy in toys) {
+    final toyStr = getToyString(toy);
+    ret += ' $toyStr ';
+  }
+  return ret;
 }
 
-String getToyString(Toy toy) {
+String getToyString(Toy? toy) {
+  if (toy == null) {
+    return "";
+  }
   final brand = toy.brand != null ? ', ${getBrandString(toy.brand)}' : '';
   return '{name: ${toy.name}$brand}';
 }

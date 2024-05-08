@@ -11,7 +11,7 @@ final appId = '<APP-ID>';
 // final baseURL = new Uri.http("localhost:8080");
 final baseURL = Uri(scheme: "https", host: 'services.cloud-stage.mongodb.com');
 
-final numObjectsToCreate = 2;
+final numObjectsToCreate = 1;
 final listenToChanges = true;
 
 final schemaVersion = 0;
