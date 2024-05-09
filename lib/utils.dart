@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:realm_dart/realm.dart';
 import 'package:cli/models/cat.dart';
